@@ -1,8 +1,7 @@
+export default async function Home() {
+  const res = await fetch("https://api.github.com/repos/GreedECrow/class10", {next: {revalidate: 15}});
+  const data = await res.json();
+console.log(data)
 
-export default function Home() {
-  return (
-    <main>
-0
-    </main>
-  )
+  return <main>{data.stargazers_count}</main>
 }
